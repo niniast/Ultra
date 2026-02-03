@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.header {
+    background: #000;
+}
+
+.header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    height: 64px;
+}
+
+/* LEFT */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    height: 40px;
+}
+
+/* CENTER */
+.header-center {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+.nav-link:hover {
+    opacity: 1;
+}
+
+/* RIGHT */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 6px 10px;
+    transition: border-color 0.2s ease;
+}
+
+.search:focus-within {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search__input {
+    width: 160px;
+    min-width: 120px;
+    max-width: 220px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.search__input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search__btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Lang switcher */
+.lang-switcher {
+    display: flex;
+    gap: 6px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: #fff;
+}
+
+.lang-btn.active {
+    color: #fff;
+}
+
+/* sr-only (accessibility) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 16px;
+    text-align: center;
+}
+/* =============== HERO / SLIDER =============== */
+
+.hero {
+    background: #f2f2f2; /* როგორც სქრინზე გვერდები ღიაა */
+    padding: 18px 0 0;
+}
+
+.slider {
+    position: relative;
+    height: 360px; /* სურათივით პროპორციას აძლევს */
+    border: 1px solid #e5e5e5;
+    background: #111;
+    overflow: hidden;
+}
+
+/* Slide */
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+}
+
+.slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* მუქი overlay (ტექსტი რომ იკითხებოდეს) */
+.slide__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+}
+
+/* Content */
+.slide__content {
+    position: absolute;
+    left: 64px; /* ტექსტის დაშორება მარცხნიდან */
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 520px;
+    color: #fff;
+}
+
+.slide__title {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.slide__subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 18px;
+}
+
+/* Button */
+.slide__btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background: #2b6cb0; /* ლურჯი ღილაკი სქრინივით */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Arrows */
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+}
+
+.slider__arrow--prev {
+    left: 14px;
+}
+.slider__arrow--next {
+    right: 14px;
+}
+
+.slider__arrow:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Dots */
+.slider__dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+}
+
+.dot.is-active {
+    background: rgba(255, 255, 255, 0.9);
+}

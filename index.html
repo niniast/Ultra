@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ultra</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header-inner">
+                <!-- LEFT -->
+                <div class="header-left">
+                    <img
+                        src="images/VERTEX_RED-01.png"
+                        alt="Vertex logo"
+                        class="logo-img"
+                    />
+                </div>
+
+                <!-- CENTER -->
+                <nav class="header-center" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="#">Home</a></li>
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                        <li><a class="nav-link" href="#">Services</a></li>
+                    </ul>
+                </nav>
+
+                <!-- RIGHT -->
+                <div class="header-right">
+                    <form class="search" role="search">
+                        <input
+                            class="search__input"
+                            type="search"
+                            placeholder="ძებნა..."
+                        />
+                        <button class="search__btn" type="submit">🔍</button>
+                    </form>
+
+                    <div class="lang-switcher">
+                        <button class="lang-btn active">KA</button>
+                        <button class="lang-btn">EN</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="slider" aria-label="Hero slider">
+                    <!-- Slides wrapper -->
+                    <div class="slides">
+                        <!-- Slide 1 -->
+                        <article class="slide is-active slide--1">
+                            <div class="slide__overlay"></div>
+
+                            <div class="slide__content">
+                                <h1 class="slide__title">
+                                    საუკეთესო აქსესუარები
+                                </h1>
+                                <p class="slide__subtitle">
+                                    ტექნიკები შენი სტილისთვის
+                                </p>
+                                <a class="slide__btn" href="#">შეიძინე ახლა</a>
+                            </div>
+                        </article>
+
+                        <!-- Slide 2 -->
+                        <article class="slide slide--2">
+                            <div class="slide__overlay"></div>
+
+                            <div class="slide__content">
+                                <h1 class="slide__title">გეიმინგი & ოფისი</h1>
+                                <p class="slide__subtitle">
+                                    ხარისხი, რომელიც იგრძნობა
+                                </p>
+                                <a class="slide__btn" href="#">ნახე მეტი</a>
+                            </div>
+                        </article>
+
+                        <!-- Slide 3 -->
+                        <article class="slide slide--3">
+                            <div class="slide__overlay"></div>
+
+                            <div class="slide__content">
+                                <h1 class="slide__title">სწრაფი მიწოდება</h1>
+                                <p class="slide__subtitle">
+                                    შეუკვეთე მარტივად ონლაინ
+                                </p>
+                                <a class="slide__btn" href="#">შეკვეთა</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Arrows -->
+                    <button
+                        class="slider__arrow slider__arrow--prev"
+                        type="button"
+                        aria-label="Previous slide"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        class="slider__arrow slider__arrow--next"
+                        type="button"
+                        aria-label="Next slide"
+                    >
+                        ›
+                    </button>
+
+                    <!-- Dots -->
+                    <div
+                        class="slider__dots"
+                        role="tablist"
+                        aria-label="Slide indicators"
+                    >
+                        <button
+                            class="dot is-active"
+                            type="button"
+                            aria-label="Go to slide 1"
+                        ></button>
+                        <button
+                            class="dot"
+                            type="button"
+                            aria-label="Go to slide 2"
+                        ></button>
+                        <button
+                            class="dot"
+                            type="button"
+                            aria-label="Go to slide 3"
+                        ></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
