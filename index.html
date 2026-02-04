@@ -7,32 +7,45 @@
     </head>
     <body>
         <header class="site-header">
-            <div class="container header-row">
-                <a class="header-logo" href="index.html">
-                    <img src="images/VERTEX_RED-01.png" alt="Logo">
-                </a>
+            <div class="container">
+                <div class="header-row">
+                    <a class="header-logo" href="index.html">
+                        <img src="images/VERTEX_RED-01.png" alt="Logo" />
+                    </a>
 
-                <nav class="header-nav" aria-label="Main navigation">
-                    <a class="header-link" href="#">მთავარი</a>
-                    <a class="header-link" href="#">პროდუქცია</a>
-                    <a class="header-link" href="#">კატეგორიები</a>
-                    <a class="header-link" href="#">კონტაქტი</a>
-                </nav>
+                    <nav class="header-nav" aria-label="Main navigation">
+                        <a class="header-link" href="#">მთავარი</a>
+                        <a class="header-link" href="#">პროდუქცია</a>
+                        <a class="header-link" href="#">კატეგორიები</a>
+                        <a class="header-link" href="#">კონტაქტი</a>
+                    </nav>
 
-                <div class="header-actions">
-                    <form class="header-search" role="search">
-                        <span class="search-icon" aria-hidden="true">🔍</span>
-                        <input class="search-input" type="search" placeholder="ძიება..." />
-                    </form>
+                    <div class="header-actions">
+                        <form class="header-search" role="search">
+                            <span class="search-icon" aria-hidden="true"
+                                >🔍</span
+                            >
+                            <input
+                                class="search-input"
+                                type="search"
+                                placeholder="ძიება..."
+                            />
+                        </form>
 
-                    <div class="header-lang" role="group" aria-label="Language switch">
-                        <button class="lang-btn is-active" type="button">KA</button>
-                        <button class="lang-btn" type="button">EN</button>
+                        <div
+                            class="header-lang"
+                            role="group"
+                            aria-label="Language switch"
+                        >
+                            <button class="lang-btn is-active" type="button">
+                                KA
+                            </button>
+                            <button class="lang-btn" type="button">EN</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-
 
         <section class="hero">
             <div class="container">
@@ -124,34 +137,92 @@
         </section>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const slides = document.querySelectorAll('.slide');
-                const dots = document.querySelectorAll('.dot');
-                const nextBtn = document.querySelector('.slider__arrow--next');
-                const prevBtn = document.querySelector('.slider__arrow--prev');
-                
+            document.addEventListener("DOMContentLoaded", () => {
+                const slides = document.querySelectorAll(".slide");
+                const dots = document.querySelectorAll(".dot");
+                const nextBtn = document.querySelector(".slider__arrow--next");
+                const prevBtn = document.querySelector(".slider__arrow--prev");
+
                 let activeIndex = 0;
 
                 function updateSlider() {
-                    slides.forEach((slide, index) => slide.classList.toggle('is-active', index === activeIndex));
-                    dots.forEach((dot, index) => dot.classList.toggle('is-active', index === activeIndex));
+                    slides.forEach((slide, index) =>
+                        slide.classList.toggle(
+                            "is-active",
+                            index === activeIndex,
+                        ),
+                    );
+                    dots.forEach((dot, index) =>
+                        dot.classList.toggle(
+                            "is-active",
+                            index === activeIndex,
+                        ),
+                    );
                 }
 
-                nextBtn?.addEventListener('click', () => {
+                nextBtn?.addEventListener("click", () => {
                     activeIndex = (activeIndex + 1) % slides.length;
                     updateSlider();
                 });
 
-                prevBtn?.addEventListener('click', () => {
-                    activeIndex = (activeIndex - 1 + slides.length) % slides.length;
+                prevBtn?.addEventListener("click", () => {
+                    activeIndex =
+                        (activeIndex - 1 + slides.length) % slides.length;
                     updateSlider();
                 });
 
-                dots.forEach((dot, index) => dot.addEventListener('click', () => {
-                    activeIndex = index;
-                    updateSlider();
-                }));
+                dots.forEach((dot, index) =>
+                    dot.addEventListener("click", () => {
+                        activeIndex = index;
+                        updateSlider();
+                    }),
+                );
             });
         </script>
+        <section class="categories">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">კატეგორიები</h2>
+                </div>
+
+                <div class="categories-row">
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/cat-mouse.png"
+                            alt="მაუსები"
+                        />
+                        <span class="category-name">მაუსები</span>
+                    </a>
+
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/cat-keyboard.png"
+                            alt="კლავიატურები"
+                        />
+                        <span class="category-name">კლავიატურები</span>
+                    </a>
+
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/cat-headset.png"
+                            alt="ყურსასმენები"
+                        />
+                        <span class="category-name">ყურსასმენები</span>
+                    </a>
+
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/cat-camera.png"
+                            alt="ვებ-კამერები"
+                        />
+                        <span class="category-name">ვებ-კამერები</span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
