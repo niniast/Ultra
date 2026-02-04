@@ -6,45 +6,33 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <header class="header">
-            <div class="container header-inner">
-                <!-- LEFT -->
-                <div class="header-left">
-                    <img
-                        src="images/VERTEX_RED-01.png"
-                        alt="Vertex logo"
-                        class="logo-img"
-                    />
-                </div>
+        <header class="site-header">
+            <div class="container header-row">
+                <a class="header-logo" href="index.html">
+                    <img src="images/VERTEX_RED-01.png" alt="Logo">
+                </a>
 
-                <!-- CENTER -->
-                <nav class="header-center" aria-label="Main navigation">
-                    <ul class="nav-list">
-                        <li><a class="nav-link" href="#">Home</a></li>
-                        <li><a class="nav-link" href="#">About</a></li>
-                        <li><a class="nav-link" href="#">Contact</a></li>
-                        <li><a class="nav-link" href="#">Services</a></li>
-                    </ul>
+                <nav class="header-nav" aria-label="Main navigation">
+                    <a class="header-link" href="#">მთავარი</a>
+                    <a class="header-link" href="#">პროდუქცია</a>
+                    <a class="header-link" href="#">კატეგორიები</a>
+                    <a class="header-link" href="#">კონტაქტი</a>
                 </nav>
 
-                <!-- RIGHT -->
-                <div class="header-right">
-                    <form class="search" role="search">
-                        <input
-                            class="search__input"
-                            type="search"
-                            placeholder="ძებნა..."
-                        />
-                        <button class="search__btn" type="submit">🔍</button>
+                <div class="header-actions">
+                    <form class="header-search" role="search">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                        <input class="search-input" type="search" placeholder="ძიება..." />
                     </form>
 
-                    <div class="lang-switcher">
-                        <button class="lang-btn active">KA</button>
-                        <button class="lang-btn">EN</button>
+                    <div class="header-lang" role="group" aria-label="Language switch">
+                        <button class="lang-btn is-active" type="button">KA</button>
+                        <button class="lang-btn" type="button">EN</button>
                     </div>
                 </div>
             </div>
         </header>
+
 
         <section class="hero">
             <div class="container">
@@ -134,5 +122,36 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slide');
+                const dots = document.querySelectorAll('.dot');
+                const nextBtn = document.querySelector('.slider__arrow--next');
+                const prevBtn = document.querySelector('.slider__arrow--prev');
+                
+                let activeIndex = 0;
+
+                function updateSlider() {
+                    slides.forEach((slide, index) => slide.classList.toggle('is-active', index === activeIndex));
+                    dots.forEach((dot, index) => dot.classList.toggle('is-active', index === activeIndex));
+                }
+
+                nextBtn?.addEventListener('click', () => {
+                    activeIndex = (activeIndex + 1) % slides.length;
+                    updateSlider();
+                });
+
+                prevBtn?.addEventListener('click', () => {
+                    activeIndex = (activeIndex - 1 + slides.length) % slides.length;
+                    updateSlider();
+                });
+
+                dots.forEach((dot, index) => dot.addEventListener('click', () => {
+                    activeIndex = index;
+                    updateSlider();
+                }));
+            });
+        </script>
     </body>
 </html>
