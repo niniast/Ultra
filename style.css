@@ -156,9 +156,6 @@ body {
 /* =====================
    HERO / SLIDER
 ===================== */
-.hero {
-    background: var(--bg-light);
-}
 
 .slider {
     position: relative;
@@ -323,7 +320,6 @@ body {
 ===================== */
 .categories {
     padding: var(--space-lg) 0;
-    background: var(--bg-light);
 }
 
 /* Section head (title bar) */
@@ -382,4 +378,200 @@ body {
 .category-name {
     font-size: var(--fs-sm);
     opacity: 0.85;
+}
+
+/* =====================
+   PRODUCTS SECTION
+===================== */
+.products {
+    padding: var(--space-lg) 0;
+    /* თუ გინდა ერთიანი უკანა ფონი იყოს, დატოვე transparent */
+    background: transparent;
+}
+
+.products__head {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+    padding: 14px 16px;
+}
+
+.products__title {
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 700;
+    color: #111;
+}
+
+/* Grid */
+.products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 18px;
+}
+
+/* Card */
+.p-card {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* Badge */
+.p-card__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #b11a1a;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+/* Image area */
+.p-card__media {
+    background: #e9eaee;
+    padding: 18px;
+    display: grid;
+    place-items: center;
+    min-height: 140px;
+}
+
+.p-card__media img {
+    width: min(220px, 100%);
+    height: 110px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Body */
+.p-card__body {
+    padding: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    text-align: center;
+}
+
+.p-card__name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+
+.p-card__price {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: #111;
+}
+
+.p-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #2f5ea8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease;
+}
+
+.p-card__btn:hover {
+    background: #254c86;
+    transform: translateY(-1px);
+}
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #2f343b; /* მუქი ნაცრისფერი როგორც სურათში */
+    color: rgba(255, 255, 255, 0.85);
+    padding-top: 34px;
+}
+
+/* Top grid */
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+    padding: 6px 0 26px;
+}
+
+/* Logo */
+.footer__logo {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* Titles */
+.footer__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+/* პატარა ხაზი სათაურის ქვეშ (როგორც სურათში) */
+.footer__title::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.18);
+    margin-top: 8px;
+}
+
+/* Lists */
+.footer__list {
+    list-style: disc;
+    padding-left: 18px;
+    display: grid;
+    gap: 10px;
+}
+
+.footer__link {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+    color: #fff;
+}
+
+/* Vertical separators (როგორც სურათშია) */
+.footer__col:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+    padding-left: 26px;
+}
+
+/* Bottom bar */
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.12);
+    padding: 14px 0;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
 }
