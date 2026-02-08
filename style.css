@@ -245,15 +245,11 @@ a {
 /* =====================
    5) HERO / SLIDER
 ===================== */
-.hero {
-    padding-block: var(--s-4);
-}
 
 .slider {
     position: relative;
     overflow: hidden;
     background: #000;
-    border-radius: var(--r-lg);
     box-shadow: var(--sh-2);
 }
 
@@ -408,7 +404,6 @@ a {
     border: var(--b-soft);
     border-bottom: none;
     padding: 14px 16px;
-    border-radius: var(--r-md) var(--r-md) 0 0;
 }
 .section-title {
     font-size: var(--fs-lg);
@@ -420,7 +415,6 @@ a {
     grid-template-columns: repeat(4, 1fr);
     background: var(--c-surface);
     border: var(--b-soft);
-    border-radius: 0 0 var(--r-md) var(--r-md);
     overflow: hidden;
 }
 
@@ -462,7 +456,6 @@ a {
     border: var(--b);
     border-bottom: none;
     padding: 14px 16px;
-    border-radius: var(--r-md) var(--r-md) 0 0;
 }
 .products__title {
     font-size: var(--fs-lg);
