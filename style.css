@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "Firago";
+    src:
+        url("fonts/firago/Firago-Regular.woff2") format("woff2"),
+        url("fonts/firago/Firago-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Firago";
+    src:
+        url("fonts/firago/Firago-Bold.woff2") format("woff2"),
+        url("fonts/firago/Firago-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Colors */
     --color-dark: #111;
@@ -31,6 +51,8 @@
     /* Typography */
     --fs-sm: clamp(13px, 1.4vw, 14px);
     --fs-xs: clamp(12px, 1.2vw, 13px);
+    /*font*/
+    --font-main: "Firago", "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -40,7 +62,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
 }
 
 .container {
@@ -59,6 +81,7 @@ body {
     gap: var(--space-md);
     min-height: var(--header-h);
     background-color: var(--color-dark);
+    padding: 0 var(--space-md);
 }
 
 /* LOGO */
@@ -68,7 +91,7 @@ body {
 }
 
 .header-logo img {
-    max-height: clamp(32px, 4vw, 36px);
+    max-height: clamp(54px, 6vw, 74px);
     width: auto;
     display: block;
     object-fit: contain;
@@ -85,7 +108,7 @@ body {
     color: var(--color-white-soft);
     text-decoration: none;
     font-size: var(--fs-sm);
-    padding: var(--space-sm) var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
     transition: color 0.2s ease;
 }
 
@@ -233,7 +256,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 14px;
+    padding: 12px 26px;
     border-radius: 10px;
     text-decoration: none;
     background: var(--color-primary);
@@ -368,8 +391,8 @@ body {
 
 /* Icon */
 .category-icon {
-    width: 64px;
-    height: 64px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     display: block;
 }
@@ -385,8 +408,6 @@ body {
 ===================== */
 .products {
     padding: var(--space-lg) 0;
-    /* თუ გინდა ერთიანი უკანა ფონი იყოს, დატოვე transparent */
-    background: transparent;
 }
 
 .products__head {
@@ -438,7 +459,7 @@ body {
 
 /* Image area */
 .p-card__media {
-    background: #e9eaee;
+    background: white;
     padding: 18px;
     display: grid;
     place-items: center;
@@ -460,6 +481,7 @@ body {
     gap: 10px;
     justify-items: center;
     text-align: center;
+    background-color: rgb(211, 211, 211);
 }
 
 .p-card__name {
@@ -480,7 +502,7 @@ body {
     align-items: center;
     justify-content: center;
     min-width: 140px;
-    padding: 10px 14px;
+    padding: 6px 8px;
     border-radius: 8px;
     background: #2f5ea8;
     color: #fff;
@@ -574,4 +596,10 @@ body {
     text-align: center;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65);
+}
+.footer__logo img {
+    max-height: clamp(64px, 6vw, 96px);
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
