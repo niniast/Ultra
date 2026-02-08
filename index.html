@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Ultra</title>
         <link rel="stylesheet" href="style.css" />
+        <script defer src="js.js"></script>
     </head>
     <body>
         <header class="site-header">
@@ -11,8 +12,13 @@
                     <a class="header-logo" href="index.html">
                         <img src="images/vertx-logo.png" alt="Logo" />
                     </a>
+                        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
 
-                    <nav class="header-nav" aria-label="Main navigation">
+                    <nav class="header-nav"  id="mainNav" aria-label="Main navigation">
                         <a class="header-link" href="#">მთავარი</a>
                         <a class="header-link" href="#">პროდუქცია</a>
                         <a class="header-link" href="#">კატეგორიები</a>
@@ -135,49 +141,7 @@
             </div>
         </section>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const slides = document.querySelectorAll(".slide");
-                const dots = document.querySelectorAll(".dot");
-                const nextBtn = document.querySelector(".slider__arrow--next");
-                const prevBtn = document.querySelector(".slider__arrow--prev");
-
-                let activeIndex = 0;
-
-                function updateSlider() {
-                    slides.forEach((slide, index) =>
-                        slide.classList.toggle(
-                            "is-active",
-                            index === activeIndex,
-                        ),
-                    );
-                    dots.forEach((dot, index) =>
-                        dot.classList.toggle(
-                            "is-active",
-                            index === activeIndex,
-                        ),
-                    );
-                }
-
-                nextBtn?.addEventListener("click", () => {
-                    activeIndex = (activeIndex + 1) % slides.length;
-                    updateSlider();
-                });
-
-                prevBtn?.addEventListener("click", () => {
-                    activeIndex =
-                        (activeIndex - 1 + slides.length) % slides.length;
-                    updateSlider();
-                });
-
-                dots.forEach((dot, index) =>
-                    dot.addEventListener("click", () => {
-                        activeIndex = index;
-                        updateSlider();
-                    }),
-                );
-            });
-        </script>
+    
         <section class="categories">
             <div class="container">
                 <div class="section-head">
