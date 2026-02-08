@@ -650,21 +650,22 @@ a {
     }
     .site-header.is-open .header-nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        padding: 10px 0 14px;
+        flex-direction: column;
+        align-items: flex-start; /* ტექსტიც მარჯვნივ */
+        gap: 10px;
+        padding: 10px 0 0; /* ზემოდან პატარა დაშორება */
     }
     .header-row {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto; /* logo | actions */
         grid-template-areas:
             "logo actions"
-            "nav nav";
-        grid-auto-rows: auto;
+            ".    nav";
         row-gap: 10px;
+        align-items: center;
     }
     .header-nav {
         grid-area: nav;
+        justify-self: end;
     }
     .header-logo {
         grid-area: logo;
@@ -672,6 +673,7 @@ a {
     .header-actions {
         grid-area: actions;
         justify-self: end;
+        gap: 10px;
     }
 
     .categories-row {
@@ -689,5 +691,34 @@ a {
     }
     .products__grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    /* 1) კონტენტს ვაძლევთ მეტ ადგილს გვერდებზე */
+    .slide__content {
+        padding-left: 18px; /* შენთან იყო 48px, მობილურზე ზედმეტია */
+        padding-right: 18px;
+        max-width: 100%;
+    }
+
+    /* 2) ისრებს ვწევთ კიდეებზე და ვაპატარავებთ */
+    .slider__arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        opacity: 0.9;
+    }
+
+    .slider__arrow--prev {
+        left: 8px;
+    }
+    .slider__arrow--next {
+        right: 8px;
+    }
+
+    /* 3) ყველაზე მნიშვნელოვანი: სლაიდს ვაძლევთ "safe padding"-ს ისრებისთვის */
+    .slide {
+        padding-left: 54px; /* 32px arrow + gap */
+        padding-right: 54px;
     }
 }
