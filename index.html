@@ -93,7 +93,7 @@
                         <div class="slide__overlay"></div>
 
                         <div class="slide__content">
-                            <h1 class="slide__title">საუკეთესო აქსესუარები</h1>
+                            <h2 class="slide__title">საუკეთესო აქსესუარები</h2>
                             <p class="slide__subtitle">
                                 ტექნიკები შენი სტილისთვის
                             </p>
@@ -106,7 +106,7 @@
                         <div class="slide__overlay"></div>
 
                         <div class="slide__content">
-                            <h1 class="slide__title">გეიმინგი & ოფისი</h1>
+                            <h2 class="slide__title">გეიმინგი & ოფისი</h2>
                             <p class="slide__subtitle">
                                 ხარისხი, რომელიც იგრძნობა
                             </p>
@@ -119,7 +119,7 @@
                         <div class="slide__overlay"></div>
 
                         <div class="slide__content">
-                            <h1 class="slide__title">სწრაფი მიწოდება</h1>
+                            <h2 class="slide__title">სწრაფი მიწოდება</h2>
                             <p class="slide__subtitle">
                                 შეუკვეთე მარტივად ონლაინ
                             </p>
@@ -176,66 +176,89 @@
         </section>
 
         <section class="categories">
-            <div class="section-head">
+            <div class="section-head section-head--with-arrows">
                 <h2 class="section-title">TOP კატეგორიები</h2>
+
+                <div class="categories-arrows">
+                    <button
+                        class="cat-arrow prev"
+                        type="button"
+                        aria-label="Prev"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        class="cat-arrow next"
+                        type="button"
+                        aria-label="Next"
+                    >
+                        ›
+                    </button>
+                </div>
             </div>
 
-            <div class="categories-row">
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/mouse.jpg"
-                        alt="მაუსები"
-                    />
-                    <span class="category-name">მაუსები</span>
-                </a>
+            <div
+                class="categories-carousel"
+                aria-label="Top categories carousel"
+            >
+                <div class="categories-row">
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/mouse.jpg"
+                            alt="მაუსები"
+                        />
+                        <span class="category-name">მაუსები</span>
+                    </a>
 
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/klaviatura.jpg"
-                        alt="კლავიატურები"
-                    />
-                    <span class="category-name">კლავიატურები</span>
-                </a>
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/klaviatura.jpg"
+                            alt="კლავიატურები"
+                        />
+                        <span class="category-name">კლავიატურები</span>
+                    </a>
 
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/monitori.jpg"
-                        alt="მონიტორები"
-                    />
-                    <span class="category-name">მონიტორები</span>
-                </a>
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/monitori.jpg"
+                            alt="მონიტორები"
+                        />
+                        <span class="category-name">მონიტორები</span>
+                    </a>
 
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/notebook.jpg"
-                        alt="ნოუთბუქები"
-                    />
-                    <span class="category-name">ნოუთბუქები</span>
-                </a>
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/notebook.jpg"
+                            alt="ნოუთბუქები"
+                        />
+                        <span class="category-name">ნოუთბუქები</span>
+                    </a>
 
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/yursasmeni.jpg"
-                        alt="ყურსასმენები"
-                    />
-                    <span class="category-name">ყურსასმენები</span>
-                </a>
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/yursasmeni.jpg"
+                            alt="ყურსასმენები"
+                        />
+                        <span class="category-name">ყურსასმენები</span>
+                    </a>
 
-                <a class="category-card" href="#">
-                    <img
-                        class="category-icon"
-                        src="images/camera.jpg"
-                        alt="ვებ-კამერები"
-                    />
-                    <span class="category-name">ვებ-კამერები</span>
-                </a>
+                    <a class="category-card" href="#">
+                        <img
+                            class="category-icon"
+                            src="images/camera.jpg"
+                            alt="ვებ-კამერები"
+                        />
+                        <span class="category-name">ვებ-კამერები</span>
+                    </a>
+                </div>
             </div>
         </section>
+
         <section class="products">
             <div class="products__head">
                 <h2 class="products__title">ახალი პროდუქტები</h2>
