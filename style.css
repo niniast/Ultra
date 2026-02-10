@@ -750,6 +750,12 @@ a {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 }
+@media (max-width: 768px) {
+    .products__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     /* 1) კონტენტს ვაძლევთ მეტ ადგილს გვერდებზე */
     .slide__content {
