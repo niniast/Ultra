@@ -79,6 +79,8 @@
     /* Borders */
     --b: 1px solid rgba(0, 0, 0, 0.1);
     --b-soft: 1px solid rgba(0, 0, 0, 0.08);
+
+    --section-gap: var(--s-2);
 }
 
 /* =====================
@@ -109,11 +111,6 @@ a {
 .container {
     width: var(--container);
     margin-inline: auto;
-}
-
-/* პატარა უნივერსალური დახმარება სექციებისთვის */
-.section {
-    padding-block: var(--s-5);
 }
 
 /* =====================
@@ -403,7 +400,7 @@ a {
    6) CATEGORIES
 ===================== */
 .categories {
-    padding-block: var(--s-5);
+    /* padding-block: var(--s-1);*/
 }
 
 .section-head {
@@ -455,7 +452,7 @@ a {
    7) PRODUCTS (Auto responsive grid)
 ===================== */
 .products {
-    padding-block: var(--s-5);
+    /* padding-block: var(--s-1);*/
 }
 
 .products__head {
@@ -466,7 +463,7 @@ a {
 }
 .products__title {
     font-size: var(--fs-lg);
-    font-weight: 800;
+    font-weight: 700; /* Adjusted from 800 as only 400/700 weights are loaded */
 }
 
 .products__grid {
@@ -504,12 +501,12 @@ a {
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 8px;
-    font-weight: 800;
+    font-weight: 700;
     z-index: 2;
 }
 
 .p-card__media {
-    background: #fff;
+    background: transparent;
     padding: var(--s-3);
     display: grid;
     place-items: center;
@@ -519,6 +516,7 @@ a {
     width: min(230px, 100%);
     height: 120px;
     object-fit: contain;
+    background: transparent;
 }
 
 .p-card__body {
@@ -533,11 +531,11 @@ a {
 
 .p-card__name {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700; /* Adjusted from 800 as only 400/700 weights are loaded */
 }
 .p-card__price {
     font-size: 22px;
-    font-weight: 900;
+    font-weight: 700; /* Adjusted from 900 as only 400/700 weights are loaded */
     letter-spacing: 0.2px;
 }
 .p-card__title {
@@ -575,7 +573,7 @@ a {
 .footer {
     background: #2f343b;
     color: rgba(255, 255, 255, 0.85);
-    padding-top: var(--s-5);
+    padding-top: var(--s-0);
 }
 
 .footer__grid {
@@ -594,7 +592,7 @@ a {
 
 .footer__title {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 12px;
     position: relative;
@@ -635,6 +633,22 @@ a {
     text-align: center;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65);
+}
+/* =====================
+   GLOBAL SECTION SPACING
+   ერთნაირი დაშორება ყველა მთავარ სექციას შორის
+===================== */
+
+/* header და slider ჩაწებებული: სლაიდერს ზემოდან არ აქვს დაშორება */
+.slider {
+    margin-top: 0;
+}
+
+/* ყველა მთავარ სექციას (slider-ის გარდა) ერთნაირი დაშორება ზემოდან */
+.categories,
+.products,
+.footer {
+    margin-top: var(--section-gap);
 }
 
 /* =====================
