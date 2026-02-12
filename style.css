@@ -73,6 +73,8 @@
     --b-soft: 1px solid rgba(0, 0, 0, 0.08);
 
     --section-gap: var(--s-2);
+
+    --content-narrow: min(1480px, 100% - 40px);
 }
 
 /* =====================
@@ -113,10 +115,14 @@ a {
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: var(--s-3);
-    padding-inline: var(--s-3);
-    width:100% + max-width:var(--container);
-    margin-inline: auto;
+
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+
+    padding-inline: clamp(24px, 4vw, 60px); /* აი ეს ხაზია მთავარი */
 }
+
 .header-logo {
     display: flex;
     align-items: center;
@@ -414,7 +420,7 @@ a {
     will-change: transform;
 }
 .category-card {
-    flex: 0 0 25%;
+    flex: 0 0 16.666%;
     display: grid;
     place-items: center;
     gap: 10px;
@@ -582,27 +588,66 @@ a {
     background: var(--c-primary-hover);
     transform: translateY(-2px);
 }
-
 /* =====================
-   8) FOOTER
+   FOOTER (CLEAN)
 ===================== */
 .footer {
     background: #2f343b;
     color: rgba(255, 255, 255, 0.85);
-    padding-top: 0;
+    margin-top: var(--section-gap);
 }
+
+/* Full-width bg, centered content */
+.footer__inner {
+    width: var(--container);
+    margin-inline: auto;
+    padding-inline: 16px; /* safety padding */
+}
+
+/* Main grid */
 .footer__grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
     gap: var(--s-4);
     align-items: start;
-    padding: 6px 0 var(--s-4);
+    padding: 18px 0 var(--s-4);
 }
+
+/* Columns */
+.footer__col {
+    min-width: 0;
+}
+
+/* Brand column: center logo both ways */
+.footer__brand {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+/* Logo link (keeps image centered even if PNG has empty space) */
+.footer__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px; /* helps vertical centering */
+}
+
 .footer__logo img {
     max-height: clamp(64px, 6vw, 96px);
     width: auto;
+    display: block;
     object-fit: contain;
 }
+
+/* Links columns drop slightly lower */
+.footer__links {
+    margin-top: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+    padding-left: 26px;
+}
+
+/* Titles */
 .footer__title {
     font-size: 18px;
     font-weight: 700;
@@ -610,6 +655,7 @@ a {
     margin-bottom: 12px;
     position: relative;
 }
+
 .footer__title::after {
     content: "";
     display: block;
@@ -618,25 +664,26 @@ a {
     background: rgba(255, 255, 255, 0.18);
     margin-top: 8px;
 }
+
+/* List */
 .footer__list {
     list-style: disc;
     padding-left: 18px;
     display: grid;
     gap: 10px;
 }
+
 .footer__link {
     color: rgba(255, 255, 255, 0.78);
     text-decoration: none;
     transition: color 0.2s ease;
 }
+
 .footer__link:hover {
     color: #fff;
 }
 
-.footer__col:not(:first-child) {
-    border-left: 1px solid rgba(255, 255, 255, 0.14);
-    padding-left: 26px;
-}
+/* Bottom bar */
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(0, 0, 0, 0.12);
@@ -645,7 +692,6 @@ a {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65);
 }
-
 /* =====================
    GLOBAL SECTION SPACING
 ===================== */
@@ -656,6 +702,14 @@ a {
 .products,
 .footer {
     margin-top: var(--section-gap);
+}
+
+.categories .section-head,
+.categories .categories-carousel,
+.products .products__head,
+.products .products-carousel {
+    width: var(--content-narrow);
+    margin-inline: auto;
 }
 
 /* =====================
