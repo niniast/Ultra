@@ -711,6 +711,25 @@ a {
     width: var(--content-narrow);
     margin-inline: auto;
 }
+.section-title,
+.products__title {
+    position: relative;
+    padding-left: 14px; /* ადგილი ხაზისთვის */
+}
+
+.section-title::before,
+.products__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 4px; /* ხაზის სისქე */
+    height: 28px; /* სიმაღლე */
+    background: var(--c-primary); /* ლურჯი ფერი */
+    border-radius: 2px;
+}
 
 /* =====================
    9) responsive
