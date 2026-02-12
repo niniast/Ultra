@@ -1,4 +1,5 @@
-/* burger menu */ const header = document.querySelector(".site-header");
+/* burger menu */
+const header = document.querySelector(".site-header");
 const burger = document.querySelector(".burger");
 
 burger?.addEventListener("click", () => {
@@ -6,7 +7,7 @@ burger?.addEventListener("click", () => {
     burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
 });
 
-/*slider */
+/* slider */
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
@@ -43,48 +44,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =============================
-// TOP Categories Carousel (Prev/Next)
+// Generic Transform Carousel
+// Works for categories + each products section
 // =============================
-(() => {
-    const track = document.querySelector(".categories-row");
-    const viewport = document.querySelector(".categories-carousel");
-    const prevBtn = document.querySelector(".cat-arrow.prev");
-    const nextBtn = document.querySelector(".cat-arrow.next");
-
-    if (!track || !viewport || !prevBtn || !nextBtn) return;
+function setupTransformCarousel({
+    viewport,
+    track,
+    itemSelector,
+    prevBtn,
+    nextBtn,
+}) {
+    if (!viewport || !track || !prevBtn || !nextBtn) return;
 
     let index = 0;
     let step = 0;
     let maxIndex = 0;
 
-    function clamp(n, min, max) {
-        return Math.max(min, Math.min(max, n));
-    }
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
     function recalc() {
-        const first = track.querySelector(".category-card");
+        const first = track.querySelector(itemSelector);
         if (!first) return;
 
-        // 1 card width (including borders/padding)
-        const cardRect = first.getBoundingClientRect();
-        step = cardRect.width;
+        const itemRect = first.getBoundingClientRect();
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-        // how many cards can fit in viewport
+        step = itemRect.width + gap;
+
         const visible = Math.max(1, Math.round(viewport.clientWidth / step));
-
         const total = track.children.length;
-        maxIndex = Math.max(0, total - visible);
 
+        maxIndex = Math.max(0, total - visible);
         index = clamp(index, 0, maxIndex);
+
         apply();
     }
 
     function apply() {
         track.style.transform = `translateX(${-index * step}px)`;
 
-        // optional: disable buttons on ends
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === maxIndex;
+
         prevBtn.style.opacity = prevBtn.disabled ? "0.4" : "1";
         nextBtn.style.opacity = nextBtn.disabled ? "0.4" : "1";
     }
@@ -99,31 +100,27 @@ document.addEventListener("DOMContentLoaded", () => {
         apply();
     });
 
-    // drag/swipe (optional but nice)
-    let isDown = false;
-    let startX = 0;
-    let startIndex = 0;
-
-    viewport.addEventListener("pointerdown", (e) => {
-        isDown = true;
-        viewport.setPointerCapture(e.pointerId);
-        startX = e.clientX;
-        startIndex = index;
-    });
-
-    viewport.addEventListener("pointermove", (e) => {
-        if (!isDown) return;
-        const dx = e.clientX - startX;
-        const moved = Math.round(-dx / step);
-        index = clamp(startIndex + moved, 0, maxIndex);
-        apply();
-    });
-
-    viewport.addEventListener("pointerup", () => (isDown = false));
-    viewport.addEventListener("pointercancel", () => (isDown = false));
-
-    // recalculation on resize + after images load
     window.addEventListener("resize", recalc);
     window.addEventListener("load", recalc);
     recalc();
-})();
+}
+
+/* Categories */
+setupTransformCarousel({
+    viewport: document.querySelector(".categories-carousel"),
+    track: document.querySelector(".categories-row"),
+    itemSelector: ".category-card",
+    prevBtn: document.querySelector(".cat-arrow.prev"),
+    nextBtn: document.querySelector(".cat-arrow.next"),
+});
+
+/* Products (multiple sections) */
+document.querySelectorAll(".products").forEach((section) => {
+    setupTransformCarousel({
+        viewport: section.querySelector(".products-carousel"),
+        track: section.querySelector(".products__grid"),
+        itemSelector: ".p-card",
+        prevBtn: section.querySelector(".p-arrow.prev"),
+        nextBtn: section.querySelector(".p-arrow.next"),
+    });
+});

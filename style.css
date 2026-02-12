@@ -24,10 +24,8 @@
    2) TOKENS (Variables)
 ===================== */
 :root {
-    /* Font */
     --font-main: "Firago", "Helvetica Neue", Arial, sans-serif;
 
-    /* Colors */
     --c-dark: #111;
     --c-white: #fff;
 
@@ -49,34 +47,28 @@
     --lang-bg: rgba(255, 255, 255, 0.08);
     --lang-active-bg: rgba(255, 255, 255, 0.18);
 
-    /* Layout */
     --container: min(1400px, 100% - 32px);
     --header-h: clamp(56px, 6vw, 72px);
 
-    /* Spacing (fluid) */
     --s-1: clamp(6px, 0.8vw, 10px);
     --s-2: clamp(10px, 1.2vw, 14px);
     --s-3: clamp(14px, 1.8vw, 18px);
     --s-4: clamp(18px, 2.4vw, 26px);
     --s-5: clamp(24px, 3.2vw, 34px);
 
-    /* Radius */
     --r-sm: 10px;
     --r-md: 14px;
     --r-lg: 18px;
 
-    /* Type */
     --fs-xs: clamp(12px, 1.2vw, 13px);
     --fs-sm: clamp(13px, 1.4vw, 14px);
     --fs-md: clamp(15px, 1.6vw, 16px);
     --fs-lg: clamp(18px, 2.2vw, 22px);
     --fs-xl: clamp(24px, 3.2vw, 40px);
 
-    /* Shadows */
     --sh-1: 0 10px 22px rgba(0, 0, 0, 0.06);
     --sh-2: 0 14px 30px rgba(0, 0, 0, 0.1);
 
-    /* Borders */
     --b: 1px solid rgba(0, 0, 0, 0.1);
     --b-soft: 1px solid rgba(0, 0, 0, 0.08);
 
@@ -91,23 +83,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: var(--font-main);
     color: var(--c-text);
     background: var(--c-surface-2);
     line-height: 1.4;
 }
-
 img {
     max-width: 100%;
     display: block;
 }
-
 a {
     color: inherit;
 }
-
 .container {
     width: var(--container);
     margin-inline: auto;
@@ -119,7 +107,6 @@ a {
 .site-header {
     background: var(--c-dark);
 }
-
 .header-row {
     min-height: var(--header-h);
     display: grid;
@@ -127,11 +114,9 @@ a {
     align-items: center;
     gap: var(--s-3);
     padding-inline: var(--s-3);
-    width: var(--container);
+    width:100% + max-width:var(--container);
     margin-inline: auto;
 }
-
-/* LOGO */
 .header-logo {
     display: flex;
     align-items: center;
@@ -141,6 +126,7 @@ a {
     width: auto;
     object-fit: contain;
 }
+
 .burger {
     display: none;
     width: 42px;
@@ -151,19 +137,16 @@ a {
     cursor: pointer;
     padding: 10px;
 }
-
 .burger span {
     display: block;
     height: 2px;
     background: rgba(255, 255, 255, 0.88);
     border-radius: 99px;
 }
-
 .burger span + span {
     margin-top: 6px;
 }
 
-/* NAV */
 .header-nav {
     display: flex;
     justify-content: center;
@@ -184,14 +167,12 @@ a {
     background: rgba(255, 255, 255, 0.06);
 }
 
-/* ACTIONS */
 .header-actions {
     display: flex;
     align-items: center;
     gap: var(--s-2);
 }
 
-/* SEARCH */
 .header-search {
     display: flex;
     align-items: center;
@@ -207,11 +188,9 @@ a {
     justify-content: center;
     color: rgba(255, 255, 255, 0.9);
 }
-
 .search-icon svg {
     display: block;
 }
-
 .search-input {
     background: transparent;
     border: none;
@@ -224,7 +203,6 @@ a {
     color: var(--c-white-muted);
 }
 
-/* LANGUAGE */
 .header-lang {
     display: flex;
     overflow: hidden;
@@ -249,19 +227,16 @@ a {
 /* =====================
    5) HERO / SLIDER
 ===================== */
-
 .slider {
     position: relative;
     overflow: hidden;
     background: #000;
     box-shadow: var(--sh-2);
 }
-
 .slides {
     position: relative;
     min-height: clamp(240px, 30vw, 380px);
 }
-
 .slide {
     position: absolute;
     inset: 0;
@@ -278,7 +253,6 @@ a {
     opacity: 1;
     pointer-events: auto;
 }
-
 .slide--1 {
     background-image: url("images/hero-1.jpg");
 }
@@ -294,14 +268,12 @@ a {
     inset: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.1));
 }
-
 .slide__content {
     position: relative;
     z-index: 1;
     max-width: 560px;
     padding-left: clamp(10px, 3vw, 54px);
 }
-
 .slide__title {
     color: var(--c-white);
     font-size: var(--fs-xl);
@@ -321,12 +293,10 @@ a {
     padding: 12px 26px;
     border-radius: var(--r-sm);
     text-decoration: none;
-
     background-color: var(--c-primary);
     color: var(--c-white);
     font-size: var(--fs-sm);
     font-weight: 700;
-
     transition:
         transform 0.2s ease,
         background-color 0.2s ease,
@@ -338,7 +308,6 @@ a {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }
 
-/* arrows */
 .slider__arrow {
     position: absolute;
     top: 50%;
@@ -370,7 +339,6 @@ a {
     right: 12px;
 }
 
-/* dots */
 .slider__dots {
     position: absolute;
     left: 50%;
@@ -397,35 +365,29 @@ a {
 }
 
 /* =====================
-   6) CATEGORIES
+   6) CATEGORIES (carousel 4 visible)
 ===================== */
-
-/* Head (title + arrows) */
 .section-head {
     background: var(--c-surface);
     border: var(--b-soft);
     border-bottom: none;
     padding: 14px 16px;
 }
-
 .section-head--with-arrows {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
 }
-
 .section-title {
     font-size: var(--fs-lg);
     font-weight: 700;
 }
 
-/* arrows */
 .categories-arrows {
     display: flex;
     gap: 8px;
 }
-
 .cat-arrow {
     width: 34px;
     height: 34px;
@@ -436,28 +398,23 @@ a {
     font-size: 18px;
     line-height: 1;
 }
-
 .cat-arrow:hover {
     background: rgba(159, 23, 23, 0.04);
 }
 
-/* FULL-WIDTH carousel wrapper */
 .categories-carousel {
     width: 100%;
     overflow: hidden;
     background: var(--c-surface);
     border: var(--b-soft);
 }
-
-/* Track */
 .categories-row {
-    display: flex; /* grid -> flex */
+    display: flex;
     transition: transform 0.35s ease;
     will-change: transform;
 }
-/* Item */
 .category-card {
-    flex: 0 0 16.666%; /* 6 items desktop */
+    flex: 0 0 25%;
     display: grid;
     place-items: center;
     gap: 10px;
@@ -465,57 +422,87 @@ a {
     text-decoration: none;
     color: var(--c-text);
     border-right: 1px solid rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
-
 .category-card:last-child {
     border-right: none;
 }
-
 .category-card:hover {
-    background: WHITE;
+    background: #fff;
     transform: translateY(-3px);
 }
-
 .category-icon {
     width: clamp(72px, 8vw, 120px);
     height: clamp(72px, 8vw, 120px);
     object-fit: contain;
 }
-
 .category-name {
     font-size: var(--fs-sm);
     opacity: 0.85;
 }
 
 /* =====================
-   7) PRODUCTS (Auto responsive grid)
+   7) PRODUCTS (carousel 4 visible)
 ===================== */
-.products {
-    /* padding-block: var(--s-1);*/
-}
-
 .products__head {
     background: var(--c-surface);
     border: var(--b);
     border-bottom: none;
     padding: 14px 16px;
 }
+.products__head--with-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
 .products__title {
     font-size: var(--fs-lg);
-    font-weight: 700; /* Adjusted from 800 as only 400/700 weights are loaded */
+    font-weight: 700;
+}
+
+.products-carousel {
+    width: 100%;
+    overflow: hidden;
+    background: var(--c-surface);
+    border: var(--b-soft);
+}
+
+.products-arrows {
+    display: flex;
+    gap: 8px;
+}
+.p-arrow {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: var(--b-soft);
+    background: var(--c-surface-2);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+.p-arrow:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .products__grid {
-    display: grid;
+    display: flex; /* ✅ carousel track */
     gap: var(--s-3);
     background: var(--c-surface);
     border: var(--b);
     padding: var(--s-3);
     border-radius: 0 0 var(--r-md) var(--r-md);
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    transition: transform 0.35s ease;
+    will-change: transform;
 }
 
 .p-card {
+    flex: 0 0 calc((100% - (var(--s-3) * 3)) / 4); /* ✅ 4 visible */
+    min-width: 0;
+
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: var(--r-md);
@@ -568,22 +555,12 @@ a {
     background: var(--c-surface-2);
 }
 
-.p-card__name {
-    font-size: 18px;
-    font-weight: 700; /* Adjusted from 800 as only 400/700 weights are loaded */
-}
-.p-card__price {
-    font-size: 22px;
-    font-weight: 700; /* Adjusted from 900 as only 400/700 weights are loaded */
-    letter-spacing: 0.2px;
-}
 .p-card__title {
     font-size: 16px;
     font-weight: 700;
     color: #111;
     line-height: 1.3;
 }
-
 .p-card__btn {
     display: inline-flex;
     align-items: center;
@@ -614,7 +591,6 @@ a {
     color: rgba(255, 255, 255, 0.85);
     padding-top: 0;
 }
-
 .footer__grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr;
@@ -622,13 +598,11 @@ a {
     align-items: start;
     padding: 6px 0 var(--s-4);
 }
-
 .footer__logo img {
     max-height: clamp(64px, 6vw, 96px);
     width: auto;
     object-fit: contain;
 }
-
 .footer__title {
     font-size: 18px;
     font-weight: 700;
@@ -644,7 +618,6 @@ a {
     background: rgba(255, 255, 255, 0.18);
     margin-top: 8px;
 }
-
 .footer__list {
     list-style: disc;
     padding-left: 18px;
@@ -664,7 +637,6 @@ a {
     border-left: 1px solid rgba(255, 255, 255, 0.14);
     padding-left: 26px;
 }
-
 .footer__bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(0, 0, 0, 0.12);
@@ -673,17 +645,13 @@ a {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.65);
 }
+
 /* =====================
    GLOBAL SECTION SPACING
-   ერთნაირი დაშორება ყველა მთავარ სექციას შორის
 ===================== */
-
-/* header და slider ჩაწებებული: სლაიდერს ზემოდან არ აქვს დაშორება */
 .slider {
     margin-top: 0;
 }
-
-/* ყველა მთავარ სექციას (slider-ის გარდა) ერთნაირი დაშორება ზემოდან */
 .categories,
 .products,
 .footer {
@@ -691,7 +659,7 @@ a {
 }
 
 /* =====================
-   9) responsive 
+   9) responsive
 ===================== */
 @media (max-width: 900px) {
     .burger {
@@ -704,12 +672,12 @@ a {
     .site-header.is-open .header-nav {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* ტექსტიც მარჯვნივ */
+        align-items: flex-start;
         gap: 10px;
-        padding: 10px 0 0; /* ზემოდან პატარა დაშორება */
+        padding: 10px 0 0;
     }
     .header-row {
-        grid-template-columns: 1fr auto; /* logo | actions */
+        grid-template-columns: 1fr auto;
         grid-template-areas:
             "logo actions"
             ".    nav";
@@ -729,16 +697,14 @@ a {
         gap: 10px;
     }
 
-    .categories-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1px;
-        background: rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-    }
+    /* 3 visible on tablet */
     .category-card {
         flex-basis: 33.333%;
-    } /* 3 items */
+    }
+    .p-card {
+        flex-basis: calc((100% - (var(--s-3) * 2)) / 3);
+    }
+
     .footer__grid {
         grid-template-columns: 1fr;
     }
@@ -746,46 +712,46 @@ a {
         border-left: none;
         padding-left: 0;
     }
-    .products__grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
 }
+
 @media (max-width: 768px) {
-    .products__grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* 2 visible */
+    .category-card {
+        flex-basis: 50%;
+    }
+    .p-card {
+        flex-basis: calc((100% - var(--s-3)) / 2);
     }
 }
 
 @media (max-width: 600px) {
-    /* 1) კონტენტს ვაძლევთ მეტ ადგილს გვერდებზე */
     .slide__content {
-        padding-left: 18px; /* შენთან იყო 48px, მობილურზე ზედმეტია */
+        padding-left: 18px;
         padding-right: 18px;
         max-width: 100%;
     }
-
-    /* 2) ისრებს ვწევთ კიდეებზე და ვაპატარავებთ */
     .slider__arrow {
         width: 32px;
         height: 32px;
         font-size: 20px;
         opacity: 0.9;
     }
-
     .slider__arrow--prev {
         left: 8px;
     }
     .slider__arrow--next {
         right: 8px;
     }
-
-    /* 3) ყველაზე მნიშვნელოვანი: სლაიდს ვაძლევთ "safe padding"-ს ისრებისთვის */
     .slide {
-        padding-left: 54px; /* 32px arrow + gap */
+        padding-left: 54px;
         padding-right: 54px;
     }
 
+    /* 1 + peek */
     .category-card {
         flex-basis: 70%;
-    } /* 1 item + peek */
+    }
+    .p-card {
+        flex-basis: 70%;
+    }
 }

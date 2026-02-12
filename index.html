@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,6 +7,7 @@
         <link rel="stylesheet" href="style.css" />
         <script defer src="js.js"></script>
     </head>
+
     <body>
         <header class="site-header">
             <div class="header-row">
@@ -52,7 +54,6 @@
                                 />
                             </svg>
                         </span>
-
                         <input
                             class="search-input"
                             type="search"
@@ -70,15 +71,14 @@
                         </button>
                         <button class="lang-btn" type="button">EN</button>
                     </div>
+
                     <button
                         class="burger"
                         type="button"
                         aria-label="Open menu"
                         aria-expanded="false"
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
@@ -86,12 +86,9 @@
 
         <section class="hero">
             <div class="slider" aria-label="Hero slider">
-                <!-- Slides wrapper -->
                 <div class="slides">
-                    <!-- Slide 1 -->
                     <article class="slide is-active slide--1">
                         <div class="slide__overlay"></div>
-
                         <div class="slide__content">
                             <h2 class="slide__title">საუკეთესო აქსესუარები</h2>
                             <p class="slide__subtitle">
@@ -101,10 +98,8 @@
                         </div>
                     </article>
 
-                    <!-- Slide 2 -->
                     <article class="slide slide--2">
                         <div class="slide__overlay"></div>
-
                         <div class="slide__content">
                             <h2 class="slide__title">გეიმინგი & ოფისი</h2>
                             <p class="slide__subtitle">
@@ -114,10 +109,8 @@
                         </div>
                     </article>
 
-                    <!-- Slide 3 -->
                     <article class="slide slide--3">
                         <div class="slide__overlay"></div>
-
                         <div class="slide__content">
                             <h2 class="slide__title">სწრაფი მიწოდება</h2>
                             <p class="slide__subtitle">
@@ -128,7 +121,6 @@
                     </article>
                 </div>
 
-                <!-- Arrows -->
                 <button
                     class="slider__arrow slider__arrow--prev"
                     type="button"
@@ -144,7 +136,6 @@
                     ›
                 </button>
 
-                <!-- Dots -->
                 <div
                     class="slider__dots"
                     role="tablist"
@@ -175,6 +166,7 @@
             </div>
         </section>
 
+        <!-- TOP CATEGORIES -->
         <section class="categories">
             <div class="section-head section-head--with-arrows">
                 <h2 class="section-title">TOP კატეგორიები</h2>
@@ -202,202 +194,265 @@
                 aria-label="Top categories carousel"
             >
                 <div class="categories-row">
-                    <a class="category-card" href="#">
-                        <img
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/mouse.jpg"
                             alt="მაუსები"
-                        />
-                        <span class="category-name">მაუსები</span>
-                    </a>
-
-                    <a class="category-card" href="#">
-                        <img
+                        /><span class="category-name">მაუსები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/klaviatura.jpg"
                             alt="კლავიატურები"
-                        />
-                        <span class="category-name">კლავიატურები</span>
-                    </a>
-
-                    <a class="category-card" href="#">
-                        <img
+                        /><span class="category-name">კლავიატურები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
+                            class="category-icon"
+                            src="images/mouse.jpg"
+                            alt="მაუსები"
+                        /><span class="category-name">მაუსები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/monitori.jpg"
                             alt="მონიტორები"
-                        />
-                        <span class="category-name">მონიტორები</span>
-                    </a>
-
-                    <a class="category-card" href="#">
-                        <img
+                        /><span class="category-name">მონიტორები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
+                            class="category-icon"
+                            src="images/mouse.jpg"
+                            alt="მაუსები"
+                        /><span class="category-name">მაუსები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/notebook.jpg"
                             alt="ნოუთბუქები"
-                        />
-                        <span class="category-name">ნოუთბუქები</span>
-                    </a>
-
-                    <a class="category-card" href="#">
-                        <img
+                        /><span class="category-name">ნოუთბუქები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/yursasmeni.jpg"
                             alt="ყურსასმენები"
-                        />
-                        <span class="category-name">ყურსასმენები</span>
-                    </a>
-
-                    <a class="category-card" href="#">
-                        <img
+                        /><span class="category-name">ყურსასმენები</span></a
+                    >
+                    <a class="category-card" href="#"
+                        ><img
                             class="category-icon"
                             src="images/camera.jpg"
                             alt="ვებ-კამერები"
-                        />
-                        <span class="category-name">ვებ-კამერები</span>
-                    </a>
+                        /><span class="category-name">ვებ-კამერები</span></a
+                    >
                 </div>
             </div>
         </section>
 
+        <!-- NEW PRODUCTS -->
         <section class="products">
-            <div class="products__head">
+            <div class="products__head products__head--with-arrows">
                 <h2 class="products__title">ახალი პროდუქტები</h2>
+
+                <div class="products-arrows">
+                    <button
+                        class="p-arrow prev"
+                        type="button"
+                        aria-label="Prev"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        class="p-arrow next"
+                        type="button"
+                        aria-label="Next"
+                    >
+                        ›
+                    </button>
+                </div>
             </div>
 
-            <div class="products__grid">
-                <!-- Card 1 -->
-                <article class="p-card">
-                    <span class="p-card__badge">ახალი</span>
+            <div class="products-carousel" aria-label="New products carousel">
+                <div class="products__grid">
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 1" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__media">
-                        <img src="images/mouse.jpg" alt="პროდუქტი 1" />
-                    </div>
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 2" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__body">
-                        <h3 class="p-card__title">მაუსი</h3>
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 3" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                <!-- Card 2 -->
-                <article class="p-card">
-                    <span class="p-card__badge">ახალი</span>
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 4" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__media">
-                        <img src="images/mouse.jpg" alt="პროდუქტი 2" />
-                    </div>
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 5" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__body">
-                        <h3 class="p-card__title">მაუსი</h3>
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="p-card">
-                    <span class="p-card__badge">ახალი</span>
-
-                    <div class="p-card__media">
-                        <img src="images/mouse.jpg" alt="პროდუქტი 3" />
-                    </div>
-
-                    <div class="p-card__body">
-                        <h3 class="p-card__title">მაუსი</h3>
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="p-card">
-                    <span class="p-card__badge">ახალი</span>
-
-                    <div class="p-card__media">
-                        <img src="images/mouse.jpg" alt="პროდუქტი 4" />
-                    </div>
-
-                    <div class="p-card__body">
-                        <h3 class="p-card__title">მაუსი</h3>
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
+                    <article class="p-card">
+                        <span class="p-card__badge">ახალი</span>
+                        <div class="p-card__media">
+                            <img src="images/mouse.jpg" alt="პროდუქტი 6" />
+                        </div>
+                        <div class="p-card__body">
+                            <h3 class="p-card__title">მაუსი</h3>
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
+
+        <!-- RECENTLY VIEWED -->
         <section class="products">
-            <div class="products__head">
+            <div class="products__head products__head--with-arrows">
                 <h2 class="products__title">ბოლოს ნანახი</h2>
+
+                <div class="products-arrows">
+                    <button
+                        class="p-arrow prev"
+                        type="button"
+                        aria-label="Prev"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        class="p-arrow next"
+                        type="button"
+                        aria-label="Next"
+                    >
+                        ›
+                    </button>
+                </div>
             </div>
 
-            <div class="products__grid">
-                <!-- Card 1 -->
-                <article class="p-card">
-                    <div class="p-card__media">
-                        <img src="images/camera.jpg" alt="პროდუქტი 1" />
-                    </div>
+            <div
+                class="products-carousel"
+                aria-label="Recently viewed carousel"
+            >
+                <div class="products__grid">
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 1" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__body">
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 2" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                <!-- Card 2 -->
-                <article class="p-card">
-                    <div class="p-card__media">
-                        <img src="images/camera.jpg" alt="პროდუქტი 2" />
-                    </div>
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 3" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__body">
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 4" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                <!-- Card 3 -->
-                <article class="p-card">
-                    <div class="p-card__media">
-                        <img src="images/camera.jpg" alt="პროდუქტი 3" />
-                    </div>
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 5" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
 
-                    <div class="p-card__body">
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="p-card">
-                    <div class="p-card__media">
-                        <img src="images/camera.jpg" alt="პროდუქტი 4" />
-                    </div>
-
-                    <div class="p-card__body">
-                        <a class="p-card__btn" href="#">იხილეთ სრულად</a>
-                    </div>
-                </article>
+                    <article class="p-card">
+                        <div class="p-card__media">
+                            <img src="images/camera.jpg" alt="პროდუქტი 6" />
+                        </div>
+                        <div class="p-card__body">
+                            <a class="p-card__btn" href="#">იხილეთ სრულად</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
+
         <footer class="footer">
             <div class="footer__grid">
-                <!-- Column 1 -->
                 <div class="footer__col footer__brand">
                     <div class="footer__logo">
-                        <a href="index.html">
-                            <img src="images/vertx-logo.png" alt="Logo" />
-                        </a>
+                        <a href="index.html"
+                            ><img src="images/vertx-logo.png" alt="Logo"
+                        /></a>
                     </div>
                 </div>
 
-                <!-- Column 2 -->
                 <div class="footer__col">
                     <h3 class="footer__title">კომპანია</h3>
                     <ul class="footer__list">
                         <li>
                             <a class="footer__link" href="#">ჩვენს შესახებ</a>
                         </li>
-                        <li>
-                            <a class="footer__link" href="#">კონტაქტი</a>
-                        </li>
+                        <li><a class="footer__link" href="#">კონტაქტი</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3 -->
                 <div class="footer__col">
                     <h3 class="footer__title">სხვა ბმულები</h3>
                     <ul class="footer__list">
@@ -421,9 +476,7 @@
             </div>
 
             <div class="footer__bottom">
-                <div class="container">
-                    <p>© 2024 All Rights Reserved</p>
-                </div>
+                <div class="container"><p>© 2024 All Rights Reserved</p></div>
             </div>
         </footer>
     </body>
