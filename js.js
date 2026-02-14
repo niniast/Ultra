@@ -1,12 +1,3 @@
-/* burger menu */
-const header = document.querySelector(".site-header");
-const burger = document.querySelector(".burger");
-
-burger?.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("is-open");
-    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-});
-
 /* slider */
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".slide");
@@ -123,4 +114,46 @@ document.querySelectorAll(".products").forEach((section) => {
         prevBtn: section.querySelector(".p-arrow.prev"),
         nextBtn: section.querySelector(".p-arrow.next"),
     });
+});
+
+/* Accessibility: burger menu improvements */
+const header = document.querySelector(".site-header");
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("#mainNav");
+
+function openMenu() {
+    header.classList.add("is-open");
+    burger.setAttribute("aria-expanded", "true");
+}
+
+function closeMenu() {
+    header.classList.remove("is-open");
+    burger.setAttribute("aria-expanded", "false");
+}
+
+function toggleMenu() {
+    header.classList.contains("is-open") ? closeMenu() : openMenu();
+}
+
+burger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
+});
+
+/* outside click (backdrop / გვერდით კლიკი) */
+document.addEventListener("click", (e) => {
+    if (!header.classList.contains("is-open")) return;
+    const clickedInside = header.contains(e.target);
+    if (!clickedInside) closeMenu();
+});
+
+/* თუ მენიუში ლინკზე დააკლიკე — დაიხუროს */
+nav.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (link) closeMenu();
+});
+
+/* ESC დახურვა */
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
 });

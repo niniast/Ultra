@@ -108,6 +108,9 @@ a {
 ===================== */
 .site-header {
     background: var(--c-dark);
+    position: sticky; /* თუ გინდა რომ ზედა იყოს */
+    top: 0;
+    z-index: 1000;
 }
 .header-row {
     min-height: var(--header-h);
@@ -733,22 +736,14 @@ a {
 
 /* =====================
    9) responsive
-===================== */
+=/* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
     .burger {
         display: inline-grid;
         align-content: center;
     }
-    .header-nav {
-        display: none;
-    }
-    .site-header.is-open .header-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 10px 0 0;
-    }
+
+    /* grid სტრუქტურა შენსავით */
     .header-row {
         grid-template-columns: 1fr auto;
         grid-template-areas:
@@ -756,18 +751,76 @@ a {
             ".    nav";
         row-gap: 10px;
         align-items: center;
+        position: relative; /* overlay nav-ის საყრდენი */
     }
-    .header-nav {
-        grid-area: nav;
-        justify-self: end;
-    }
+
     .header-logo {
         grid-area: logo;
     }
+
     .header-actions {
         grid-area: actions;
         justify-self: end;
         gap: 10px;
+    }
+
+    /* ✅ NAV overlay dropdown */
+    .header-nav {
+        grid-area: nav;
+        justify-self: end;
+
+        /* overlay */
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+
+        width: min(320px, calc(100vw - 24px));
+        padding: 14px;
+
+        background: rgba(17, 17, 17, 0.98);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+        /* ზომა იმდენი, რამდენიც სჭირდება */
+        height: auto;
+
+        /* თუ ბევრი პუნქტია -> მაქს სიმაღლე + scroll */
+        max-height: calc(100vh - var(--header-h) - 24px);
+        overflow: auto;
+
+        /* შენს სტილი */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        z-index: 1100;
+    }
+
+    .site-header.is-open .header-nav {
+        display: flex;
+    }
+
+    /* ✅ backdrop (ზემოდან ეფარება კონტენტს) */
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .site-header::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 1050;
+    }
+    .site-header.is-open::after {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     /* 3 visible on tablet */
@@ -826,5 +879,24 @@ a {
     }
     .p-card {
         flex-basis: 70%;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-search {
+        flex: 0 1 auto;
+    }
+    .search-input {
+        width: 70px;
+        min-width: 50px;
+    }
+}
+@media (max-width: 300px) {
+    .header-search {
+        flex: 0 1 auto;
+    }
+    .search-input {
+        width: 30px;
+        min-width: 30px;
     }
 }
