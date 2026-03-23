@@ -108,7 +108,7 @@ a {
 ===================== */
 .site-header {
     background: var(--c-dark);
-    position: sticky; /* თუ გინდა რომ ზედა იყოს */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -232,7 +232,74 @@ a {
     color: var(--c-white);
     font-weight: 700;
 }
+/*ეს არის ის ნაწილი რაც ახალი დაემატა */
+/* =====================
+   MEGA MENU (ONLY ADD)
+===================== */
 
+.nav-item {
+    position: relative;
+}
+
+/* DROPDOWN */
+.mega-menu {
+    position: fixed;
+
+    top: var(--header-h);
+    left: 0;
+
+    width: 100vw;
+    height: calc(100vh - var(--header-h));
+
+    padding: 40px 0;
+    background: #f5f6f8;
+
+    display: flex;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.25s ease;
+
+    z-index: 1200;
+}
+.mega-menu-inner {
+    width: min(1200px, 100%);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+}
+
+/* SHOW */
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* COLUMN */
+.mega-column img {
+    background: transparent;
+}
+.mega-column h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.mega-column a {
+    display: block;
+    font-size: 18px;
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.mega-column a:hover {
+    color: #000;
+}
 /* =====================
    5) HERO / SLIDER
 ===================== */
@@ -738,6 +805,9 @@ a {
    9) responsive
 =/* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
+    .mega-menu {
+        display: none !important;
+    }
     .burger {
         display: inline-grid;
         align-content: center;
@@ -841,6 +911,9 @@ a {
 }
 
 @media (max-width: 768px) {
+    .mega-menu {
+        display: none !important;
+    }
     /* 2 visible */
     .category-card {
         flex-basis: 50%;
@@ -851,6 +924,9 @@ a {
 }
 
 @media (max-width: 600px) {
+    .mega-menu {
+        display: none !important;
+    }
     .slide__content {
         padding-left: 18px;
         padding-right: 18px;
@@ -883,6 +959,9 @@ a {
 }
 
 @media (max-width: 400px) {
+    .mega-menu {
+        display: none !important;
+    }
     .header-search {
         flex: 0 1 auto;
     }
@@ -892,6 +971,9 @@ a {
     }
 }
 @media (max-width: 300px) {
+    .mega-menu {
+        display: none !important;
+    }
     .header-search {
         flex: 0 1 auto;
     }
